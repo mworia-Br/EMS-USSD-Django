@@ -29,7 +29,7 @@ def index(request):
         elif text == "1":
             results=Service.objects.all()
             for i in results:
-                response += f"END {i} \n \n"
+                response += f"{i} \n \n"
 
         elif text == "2":
             response = "CON Choose an option \n"
@@ -77,13 +77,12 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=4)
             new_reporting=Reporting.objects.create(
-                SERVICECATEGORY=RA,
+                SERVICECATEGORY="RA",
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
                 departure=departure
-
-            )
+                )
             response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}" 
 
         #Follow up FI
@@ -96,13 +95,12 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
-                SERVICECATEGORY=FI,
+                SERVICECATEGORY="FI",
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
                 departure=departure
-
-            )
+                )
             response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
 
         #Follow up RC
@@ -115,13 +113,12 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
-                SERVICECATEGORY=RC,
+                SERVICECATEGORY="RC",
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
                 departure=departure
-
-            )
+                )
             response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
 
         #Follow up ME
@@ -134,13 +131,12 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
-                SERVICECATEGORY=ME,
+                SERVICECATEGORY="ME",
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
                 departure=departure
-
-            )
+                )
             response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
 
         #Follow up SA
@@ -153,13 +149,12 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
-                SERVICECATEGORY=SA,
+                SERVICECATEGORY="SA",
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
                 departure=departure
-
-            )
+                )
             response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
 
         #Follow up DA
@@ -172,13 +167,12 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
-                SERVICECATEGORY=DA,
+                SERVICECATEGORY="DA",
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
                 departure=departure
-
-            )
+                )
             response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
 
         #Follow up SUA
@@ -191,13 +185,12 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
-                SERVICECATEGORY=SUA,
+                SERVICECATEGORY="SUA",
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
                 departure=departure
-
-            )
+                )
             response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
 
          
