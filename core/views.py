@@ -29,7 +29,7 @@ def index(request):
         elif text == "1":
             results=Service.objects.all()
             for i in results:
-                response += f"END {i}:{i.start}-{i.finish} \n \n"
+                response += f"END {i} \n \n"
 
         elif text == "2":
             response = "CON Choose an option \n"
