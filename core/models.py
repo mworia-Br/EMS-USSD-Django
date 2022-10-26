@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Service(models.Model):
-    SERVICE_CATEGORY = [
+    SERVICECATEGORY_CHOICES = [
         ("RA", "RA"),
         ("FI", "FI"),
         ("RC", "RC"),
@@ -11,8 +11,9 @@ class Service(models.Model):
         ("DV", "DV"),
         ("SUA", "SUA"),
     ]
+    SERVICE_CATEGORY=models.CharField(max_length = 250, choices = SERVICECATEGORY_CHOICES, default = 'Awaiting confirmation')
     service_name=models.CharField(
-        max_length=10
+        max_length=100
     )
     start=models.CharField(
         max_length=250
@@ -35,7 +36,7 @@ class Reporting(models.Model):
     ("Responded", "Responded"),
     ("Cancelled", "Cancelled"),
     ]
-    SERVICE_CATEGORY = models.CharField(max_length = 150)
+    SERVICECATEGORY = models.CharField(max_length = 150)
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     customer = models.CharField(max_length = 150)
     identifier=models.IntegerField(default=0)

@@ -77,6 +77,7 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
+                SERVICECATEGORY=RA,
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
@@ -95,6 +96,7 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
+                SERVICECATEGORY=FI,
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
@@ -113,6 +115,7 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
+                SERVICECATEGORY=RC,
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
@@ -131,6 +134,7 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
+                SERVICECATEGORY=ME,
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
@@ -149,6 +153,7 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
+                SERVICECATEGORY=SA,
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
@@ -167,6 +172,7 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
+                SERVICECATEGORY=DA,
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
@@ -185,6 +191,7 @@ def index(request):
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
+                SERVICECATEGORY=SUA,
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
