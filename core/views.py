@@ -29,7 +29,7 @@ def index(request):
         elif text == "1":
             results=Service.objects.all()
             for i in results:
-                response += f"{i} \n \n"
+                response += f"END {i} \n \n"
 
         elif text == "2":
             response = "CON Choose an option \n"
@@ -42,7 +42,7 @@ def index(request):
                 customer=phone_number
             )
             for tkt in tickets:
-                response += f"END Ticket {tkt.id} on {tkt.departure:%Y-%m-%d %H:%M}"
+                response += f"END Ticket {tkt.id} on {tkt.departure:%Y-%m-%d %H:%M}{tkt.status}"
 
          #Follow up
         elif text == '2*2':

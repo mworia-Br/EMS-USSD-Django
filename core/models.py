@@ -36,7 +36,7 @@ class Reporting(models.Model):
     identifier=models.IntegerField(default=0)
     date = models.DateTimeField(auto_now_add=True)
     departure=models.DateTimeField(null=True, blank=True)
-    status = models.CharField(max_length = 250, choices = STATUS_CHOICES, default = 'Awaiting confirmation')
+    status=models.CharField(max_length = 250, choices = STATUS_CHOICES, default='Awaiting confirmation')
 
 
     def __str__(self) -> str:
