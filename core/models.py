@@ -27,7 +27,7 @@ class Service(models.Model):
         default=True
     )
     def __str__(self) -> str:
-        return self.service_name
+        return self.service_name + " " + self.SERVICE_CATEGORY
 
 class Reporting(models.Model):
     STATUS_CHOICES = [ 
@@ -48,7 +48,7 @@ class Reporting(models.Model):
         default = 'Awaiting confirmation'
         )
     def __str__(self) -> str:
-        return self.customer
+        return self.SERVICECATEGORY + " " + self.customer + " " + self.status
 
 from django.contrib import admin
 admin.site.register(Service)
