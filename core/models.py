@@ -20,7 +20,7 @@ class Service(models.Model):
     finish=models.CharField(
         max_length=250
     )
-    price = models.FloatField()
+    #price = models.FloatField()
     identifiers=models.IntegerField() #equivalent to seat number in a bus
     is_available=models.BooleanField(
         default=True
@@ -42,7 +42,7 @@ class Reporting(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     departure=models.DateTimeField(null=True, blank=True)
     status = models.CharField(
-        max_length = 20,
+        max_length = 250,
         choices = STATUS_CHOICES,
         default = 'Awaiting confirmation'
         )
