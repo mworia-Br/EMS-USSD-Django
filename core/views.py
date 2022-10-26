@@ -87,8 +87,8 @@ def index(request):
 
         #Follow up FI
         elif text == '3*2':
-            identifier=random.randint(1,30)
-            services=Service.objects.filter(is_available=True)
+            identifier=random.randint(40,70)
+            services=Service.objects.filter(SERVICE_CATEGORY="FI", is_available=True)
             services=[service for service in services]
             service=random.choices(services)
             for i in service:
@@ -105,8 +105,8 @@ def index(request):
 
         #Follow up RC
         elif text == '3*3':
-            identifier=random.randint(1,30)
-            services=Service.objects.filter(is_available=True)
+            identifier=random.randint(80,110)
+            services=Service.objects.filter(SERVICE_CATEGORY="RC", is_available=True)
             services=[service for service in services]
             service=random.choices(services)
             for i in service:
@@ -123,8 +123,8 @@ def index(request):
 
         #Follow up ME
         elif text == '3*4':
-            identifier=random.randint(1,30)
-            services=Service.objects.filter(is_available=True)
+            identifier=random.randint(120,150)
+            services=Service.objects.filter(SERVICE_CATEGORY="ME", is_available=True)
             services=[service for service in services]
             service=random.choices(services)
             for i in service:
@@ -141,8 +141,8 @@ def index(request):
 
         #Follow up SA
         elif text == '3*5':
-            identifier=random.randint(1,30)
-            services=Service.objects.filter(is_available=True)
+            identifier=random.randint(160,190)
+            services=Service.objects.filter(SERVICE_CATEGORY="SA", is_available=True)
             services=[service for service in services]
             service=random.choices(services)
             for i in service:
@@ -159,8 +159,8 @@ def index(request):
 
         #Follow up DA
         elif text == '3*6':
-            identifier=random.randint(1,30)
-            services=Service.objects.filter(is_available=True)
+            identifier=random.randint(200,230)
+            services=Service.objects.filter(SERVICE_CATEGORY="DA", is_available=True)
             services=[service for service in services]
             service=random.choices(services)
             for i in service:
@@ -177,8 +177,8 @@ def index(request):
 
         #Follow up SUA
         elif text == '3*7':
-            identifier=random.randint(1,30)
-            services=Service.objects.filter(is_available=True, )
+            identifier=random.randint(240,270)
+            services=Service.objects.filter(SERVICE_CATEGORY="SUA", is_available=True)
             services=[service for service in services]
             service=random.choices(services)
             for i in service:
