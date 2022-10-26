@@ -75,7 +75,7 @@ def index(request):
             service=random.choices(services)
             for i in service:
                 service=i
-            departure=datetime.now() + timedelta(hours=1)
+            departure=datetime.now() + timedelta(hours=4)
             new_reporting=Reporting.objects.create(
                 SERVICECATEGORY=RA,
                 service=service,
