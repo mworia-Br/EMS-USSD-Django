@@ -25,10 +25,57 @@ def index(request):
             response += "4. Cancel a report \n"
             response += "5. Report suspicious activity"
 
-         #User needs a list of all services   
+         #User wants to see list of service responders
         elif text == "1":
-            results=Service.objects.all()
-            for i in results:
+            response = "CON Okay, Select to list: \n"
+            response += "1. Hospitals \n"
+            response += "2. Ambulance Service \n"
+            response += "3. Police \n"
+            response += "4. Tow service \n"
+            response += "5. Fire department \n"
+            response += "6. Gender officers \n"
+            response += "7. Couselling centers "
+
+        #Follow up Hos
+        elif text == '1*1':
+            providers=Responder.objects.filter(category="Hospital")
+            for i in providers:
+                response += f"END {i} \n \n"
+
+        #Follow up Amb
+        elif text == '1*2':
+            providers=Responder.objects.filter(category="Ambulance")
+            for i in providers:
+                response += f"END {i} \n \n"
+
+        #Follow up Police
+        elif text == '1*3':
+            providers=Responder.objects.filter(category="Police")
+            for i in providers:
+                response += f"END {i} \n \n"
+
+        #Follow up ts
+        elif text == '1*4':
+            providers=Responder.objects.filter(category="Tow Service")
+            for i in providers:
+                response += f"END {i} \n \n"
+
+        #Follow up FD
+        elif text == '1*5':
+            providers=Responder.objects.filter(category="Fire Station")
+            for i in providers:
+                response += f"END {i} \n \n"
+
+        #Follow up GO
+        elif text == '1*6':
+            providers=Responder.objects.filter(category="Gender service")
+            for i in providers:
+                response += f"END {i} \n \n"
+
+        #Follow up CC
+        elif text == '1*7':
+            providers=Responder.objects.filter(category="Couselling Center")
+            for i in providers:
                 response += f"END {i} \n \n"
 
         elif text == "2":
