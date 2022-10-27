@@ -52,7 +52,7 @@ class Responder(models.Model):
         ("Gender service", "Gender service"),
         ("Couselling Center", "Couselling Center"),
     ]
-    category=models.CharField(choices=res_category)
+    category=models.CharField(max_length=250, choices=res_category)
     name=models.CharField(max_length=200)
     location=models.CharField(max_length=200)
     descriprition=models.CharField(max_length=400)
