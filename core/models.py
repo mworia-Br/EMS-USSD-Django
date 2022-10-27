@@ -42,6 +42,23 @@ class Reporting(models.Model):
     def __str__(self) -> str:
         return self.SERVICECATEGORY + " " + self.customer + " " + self.status
 
+class Responders(models.Model):
+    res_category=[
+        ("Hospital","Hospital"),
+        ("Police","Police"),
+        ("Ambulance", "Ambulance"),
+        ("Fire Station", "Fire Station"),
+        ("Tow Service", "Tow Service"),
+        ("Gender service", "Gender service"),
+        ("Couselling Center", "Couselling Center"),
+    ]
+    category=models.CharField(choices=res_category)
+    name=models.CharField(max_length=200)
+    location=models.CharField(max_length=200)
+    descriprition=models.CharField(max_length=400)
+    contact=models.CharField(max_length=150)
+
+
 from django.contrib import admin
 admin.site.register(Service)
 admin.site.register(Reporting)
