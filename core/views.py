@@ -19,11 +19,11 @@ def index(request):
 
         if text == "":
             response = "CON Kiambu County EMS \n Welcome! \n Which service would you like to access? \n"  
-            response += "1. List of services offered  \n"
+            response += "1. List of service providers  \n"
             response += "2. Check Report status \n"
             response += "3. Report Emergency \n"
             response += "4. Cancel a report \n"
-            response += "5. Report suspicious activity"
+            response += "5. First Aid Training"
 
          #User wants to see list of service responders
         elif text == "1":
@@ -101,7 +101,8 @@ def index(request):
             if tickets:
                 for tkt in tickets:
                     response += f"END Ticket {tkt.id} on {tkt.departure:%Y-%m-%d %H:%M}"
-            response ='END No reports found'
+            else:
+                response ='END No reports found'
 
         #User wants to report a identifier
         elif text == "3":
