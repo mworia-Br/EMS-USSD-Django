@@ -27,7 +27,7 @@ def index(request):
 
          #User wants to see list of service responders
         elif text == "1":
-            response = "CON Okay, Select to list: \n"
+            response = "CON Select to list: \n"
             response += "1. Hospitals \n"
             response += "2. Ambulance Service \n"
             response += "3. Police \n"
