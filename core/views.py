@@ -2,7 +2,7 @@ from django.shortcuts import render
 # Create your views here.
 import random
 from datetime import datetime, timedelta
-from core.models import Reporting, Service
+from core.models import Reporting, Service, Responder
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 
