@@ -42,7 +42,7 @@ class Reporting(models.Model):
     def __str__(self) -> str:
         return self.SERVICECATEGORY + " " + self.customer + " " + self.status
 
-class Responders(models.Model):
+class Responder(models.Model):
     res_category=[
         ("Hospital","Hospital"),
         ("Police","Police"),
@@ -62,3 +62,4 @@ class Responders(models.Model):
 from django.contrib import admin
 admin.site.register(Service)
 admin.site.register(Reporting)
+admin.site.register(Responder)
