@@ -1,10 +1,23 @@
 from django.shortcuts import render
 # Create your views here.
-import random
+import os
+import random, africastalking
 from datetime import datetime, timedelta
 from core.models import Reporting, Service, Responder
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
+from dotenv import load_dotenv
+
+# the load_dotenv function gets the environment variables defined in .env file
+load_dotenv()
+
+# Initialize SDK
+#username = os.getenv("username")
+username = "sandbox" 
+api_key = os.getenv("SANDBOX_API_KEY")    
+africastalking.initialize(username, api_key)
+
+sms = africastalking.SMS
 
 # Create your views here.
 @csrf_exempt
