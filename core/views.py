@@ -150,7 +150,7 @@ def index(request):
                 departure=departure
                 )
             send_messages()
-            response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
+            response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up FI
         elif text == '3*2':
@@ -169,7 +169,7 @@ def index(request):
                 departure=departure
                 )
             send_messages()
-            response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
+            response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up RC
         elif text == '3*3':
@@ -188,7 +188,7 @@ def index(request):
                 departure=departure
                 )
             send_messages()
-            response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
+            response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up ME
         elif text == '3*4':
@@ -207,7 +207,7 @@ def index(request):
                 departure=departure
                 )
             send_messages()
-            response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
+            response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up SA
         elif text == '3*5':
@@ -226,7 +226,7 @@ def index(request):
                 departure=departure
                 )
             send_messages()
-            response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
+            response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up DA
         elif text == '3*6':
@@ -245,7 +245,7 @@ def index(request):
                 departure=departure
                 )
             send_messages()
-            response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
+            response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up SUA
         elif text == '3*7':
@@ -264,7 +264,7 @@ def index(request):
                 departure=departure
                 )
             send_messages()
-            response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
+            response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
          
         elif text == "4":
