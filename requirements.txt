@@ -1,4 +1,13 @@
+africastalking==1.2.4
 asgiref==3.5.2
+certifi==2022.9.24
+charset-normalizer==2.1.1
+contextlib2==21.6.0
 Django==4.1.2
+idna==3.4
+python-dotenv==0.21.0
+requests==2.28.1
+schema==0.7.5
 sqlparse==0.4.3
 tzdata==2022.5
+urllib3==1.26.12
