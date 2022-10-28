@@ -30,6 +30,11 @@ def index(request):
 
         response = ""
 
+        def send_messages():
+            alert=f'Hello, your emergency has been received. You will receive a call from a response team to provide additional information.'
+            responsed =sms.send(alert, [phone_number]) 
+            print(responsed)
+
         if text == "":
             response = "CON Kiambu County EMS \n Welcome! \n Which service would you like to access? \n"  
             response += "1. List of service providers  \n"
@@ -144,7 +149,8 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}" 
+            send_messages()
+            response = f"END  Alright! Here is your reporting info: \n TICKET NO {new_reporting.id} \n Service Number is {service} \n Your identifier number is {identifier} \n Your service leaves at {departure:%H:%M:%S}"
 
         #Follow up FI
         elif text == '3*2':
