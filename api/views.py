@@ -16,6 +16,30 @@ def reportingList(request):
     serializer = ReportingSerializer(reportings, many = True)
     return Response(serializer.data)
 
+
+@api_view(['GET'])
+def reportingDetail(request, pk):
+    reportings = Reporting.objects.get(id=pk)
+    serializer = ReportingSerializer(reportings, many = False)
+    return Response(serializer.data)
+
+
+@api_view(['POST'])
+def reportingUpdate(request, pk):
+    reportings = Reporting.objects.get(id = pk)
+    serializer = ReportingSerializer(instance=reportings, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+
+@api_view(['POST'])
+def reportingCreate(request):
+    serializer = ReportingSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
 """
 API Overview
 """
