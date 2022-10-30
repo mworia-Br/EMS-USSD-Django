@@ -40,7 +40,7 @@ class Reporting(models.Model):
 
 
     def __str__(self):
-        return self.SERVICECATEGORY + " " + self.customer+ " " + self.date + " " + self.status
+        return self.SERVICECATEGORY + " " + self.customer+ " " + self.status
 
 class Responder(models.Model):
     res_category=[
