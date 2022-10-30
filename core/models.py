@@ -39,8 +39,8 @@ class Reporting(models.Model):
     status=models.CharField(max_length = 250, choices = STATUS_CHOICES, default='Awaiting confirmation')
 
 
-    def __str__(self) -> str:
-        return self.SERVICECATEGORY + " " + self.customer + " " + self.status
+    def __str__(self):
+        return self.SERVICECATEGORY + " " + self.customer+ " " + self.date + " " + self.status
 
 class Responder(models.Model):
     res_category=[
