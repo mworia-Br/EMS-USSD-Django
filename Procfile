@@ -1,0 +1,1 @@
+web: gunicorn EMSUSSD.wsgi --log-file -
