@@ -13,12 +13,27 @@ load_dotenv()
 
 # Initialize SDK
 #username = os.getenv("username")
-username = "sandbox" 
+username = "I-sema" 
 api_key = os.getenv("SANDBOX_API_KEY")    
 africastalking.initialize(username, api_key)
 
 sms = africastalking.SMS
+'''
+def send_messages():
+            print('send messages')
+            alert=f'Hello, your request has been received. We are on standby to assist you, our response team will contact you for additional information.'
+            responsed =sms.send(alert, [phone_number]) 
+            print(responsed)
 
+def send_messages():
+    print('send messages')
+    to=['+254791573545', '+254722000000']
+    
+    message='Hello, your request has been received. We are on standby to assist you, our response team will contact you for additional information.'
+
+    response =sms.send(message, to) 
+    print(response)
+'''
 # Create your views here.
 @csrf_exempt
 def index(request):
@@ -27,16 +42,10 @@ def index(request):
         service_code = request.POST.get('serviceCode')
         phone_number = request.POST.get('phoneNumber')
         text = request.POST.get('text')
-
         response = ""
 
-        def send_messages():
-            alert=f'Hello, your request has been received. We are on standby to assist you, our response team will contact you for additional information.'
-            responsed =sms.send(alert, [phone_number]) 
-            print(responsed)
-
         if text == "":
-            response = "CON Kiambu County EMS \n Welcome! \n Which service would you like to access? \n"  
+            response = "CON iSema\n Welcome! \n Which service would you like to access? \n"  
             response += "1. List of service providers  \n"
             response += "2. Check Report status \n"
             response += "3. Report Emergency \n"
@@ -129,9 +138,9 @@ def index(request):
             response += "2. Fire Incident \n"
             response += "3. Robbery/Crime \n"
             response += "4. Medical Emergency \n"
-            response += "5. Sexual Abuse \n"
-            response += "6. Domestic Violence \n"
-            response += "7. Suspicious activity "
+            response += "5. GBV \n"
+            response += "6. Child Services \n"
+            response += "7. Death "
 
         #Follow up RA
         elif text == '3*1':
@@ -150,6 +159,8 @@ def index(request):
                 departure=departure
                 )
             send_messages()
+            print('This is the error')
+
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up FI
@@ -168,7 +179,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            send_messages()
+            #send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up RC
@@ -187,7 +198,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            send_messages()
+            #send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up ME
@@ -206,7 +217,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            send_messages()
+            #send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up SA
@@ -225,7 +236,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            send_messages()
+            #send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up DA
@@ -244,7 +255,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            send_messages()
+            #send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up SUA
@@ -263,7 +274,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            send_messages()
+            #send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
          
