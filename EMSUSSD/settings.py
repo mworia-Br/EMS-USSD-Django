@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-h&@6&n)$0li4p@j#lsw2f^*sy$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://isema.azurewebsites.net']
+ALLOWED_HOSTS = ['isema.azurewebsites.net']
 
 '''
 if 'CODESPACE_NAME' in os.environ:
