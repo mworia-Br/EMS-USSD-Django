@@ -24,12 +24,11 @@ load_dotenv()
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.getenv("SECRET_KEY")
 
-SECRET_KEY = 'django-insecure-h&@6&n)$0li4p@j#lsw2f^*sy$p@(i4hkty)ear3*s8k)7nc8v'
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-h&@6&n)$0li4p@j#lsw2f^*sy$p@(i4hkty)ear3*s8k)7nc8v')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -84,20 +83,28 @@ WSGI_APPLICATION = 'EMSUSSD.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-
+"""
+#local database settings
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-"""
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
 
 """
+#msazure database settings
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DBNAME'),
+        'HOST': os.environ.get('DBHOST'),
+        'USER': os.environ.get('DBUSER'),
+        'PASSWORD': os.environ.get('DBPASS'),
+    }
+}
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 

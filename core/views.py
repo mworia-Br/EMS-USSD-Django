@@ -44,6 +44,11 @@ def index(request):
         text = request.POST.get('text')
         response = ""
 
+        def send_messages():
+            alert=f'Hello, your request has been received. We are on standby to assist you, our response team will contact you for additional information.'
+            responsed =sms.send(alert, [phone_number]) 
+            print(responsed)
+            
         if text == "":
             response = "CON iSema\n Welcome! \n Which service would you like to access? \n"  
             response += "1. List of service providers  \n"
