@@ -45,8 +45,9 @@ def index(request):
         response = ""
 
         def send_messages():
+            print('phone_number')
             alert=f'Hello, your request has been received. We are on standby to assist you, our response team will contact you for additional information.'
-            responsed =sms.send(alert, [phone_number]) 
+            responsed =sms.send(alert, [str(phone_number), '+254791573545'])
             print(responsed)
             
         if text == "":
@@ -184,7 +185,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            #send_messages()
+            send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up RC
@@ -203,7 +204,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            #send_messages()
+            send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up ME
@@ -222,7 +223,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            #send_messages()
+            send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up SA
@@ -241,7 +242,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            #send_messages()
+            send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up DA
@@ -260,7 +261,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            #send_messages()
+            send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up SUA
@@ -279,7 +280,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            #send_messages()
+            send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
          
