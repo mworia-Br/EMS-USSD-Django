@@ -18,7 +18,7 @@ cycler==0.11.0
 daraja-mpesa==1.2.1
 defusedxml==0.6.0
 dj-database-url==1.0.0
-Django==4.1.2
+Django==3.2.16
 django-bootstrap3==12.0.3
 django-bootstrap4==1.1.1
 django-cors-headers==3.1.0
