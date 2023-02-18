@@ -48,7 +48,9 @@ def index(request):
         def send_messages():
             print('phone_number')
             alert='Hello, your request has been received. We are on standby to assist you, our response team will contact you for additional information.'
-            responsed =sms.send(alert, [str(phone_number), '+254791573545'])
+            message=alert
+            recipients=[str(phone_number), '+254791573545']
+            responsed =sms.send(message, recipients)
             print(responsed)
             
         if text == "":
