@@ -1,7 +1,8 @@
 from django.shortcuts import render
 # Create your views here.
 import os
-import random, africastalking
+import random
+import africastalking
 from datetime import datetime, timedelta
 from core.models import Reporting, Service, Responder
 from django.views.decorators.csrf import csrf_exempt
@@ -46,7 +47,7 @@ def index(request):
 
         def send_messages():
             print('phone_number')
-            alert=f'Hello, your request has been received. We are on standby to assist you, our response team will contact you for additional information.'
+            alert='Hello, your request has been received. We are on standby to assist you, our response team will contact you for additional information.'
             responsed =sms.send(alert, [str(phone_number), '+254791573545'])
             print(responsed)
             
