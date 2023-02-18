@@ -32,14 +32,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['isema.azurewebsites.net']
 
-'''
+
 if 'CODESPACE_NAME' in os.environ:
     # Add 'https://isema.azurewebsites.net' to the list of trusted origins
-    CSRF_TRUSTED_ORIGINS = [f'https://{os.getenv("CODESPACE_NAME")}-8000.{os.getenv("GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN")}'\
-                       ] + ['https://isema.azurewebsites.net']
+    CSRF_TRUSTED_ORIGINS = [f'https://isema.azurewebsites.net-8000.{os.getenv("GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN")}']
     # Add a new trusted origin
     #CSRF_TRUSTED_ORIGINS.append('https://isema.azurewebsites.net')
-'''
+
 # Application definition
 
 INSTALLED_APPS = [
