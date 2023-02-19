@@ -7,4 +7,4 @@ django-admin startproject EMSUSSD
 python manage.py startapp core
 
 #AT_SANDBOX
-USSD:   *384*55250#
+USSD:   "*384*55250#"
