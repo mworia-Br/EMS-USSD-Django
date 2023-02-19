@@ -7,9 +7,9 @@ class Service(models.Model):
         ("FI", "FI"),
         ("RC", "RC"),
         ("ME", "ME"),
-        ("SA", "SA"),
-        ("DV", "DV"),
-        ("SUA", "SUA"),
+        ("GBV", "GBV"),
+        ("CR", "CR"),
+        ("SUD", "SUD"),
     ]
     SERVICE_CATEGORY=models.CharField(max_length = 250, choices = SERVICECATEGORY_CHOICES, default = 'Awaiting confirmation')
     service_name=models.CharField(max_length=100)

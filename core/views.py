@@ -47,8 +47,9 @@ def index(request):
 
         def send_messages():
             print('phone_number')
-            alert='Hello, your request has been received. We are on standby to assist you, our response team will contact you for additional information.'
+            alert='Request received on iSema. Our emergency response team will contact you for additional information.'
             message=alert
+            print(phone_number)
             recipients=[str(phone_number), '+254791573545']
             responsed =sms.send(message, recipients)
             print(responsed)
@@ -168,9 +169,8 @@ def index(request):
                 departure=departure
                 )
             send_messages()
-            print('This is the error')
 
-            response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
+            response = f"END  Successful! Info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up FI
         elif text == '3*2':
@@ -229,17 +229,17 @@ def index(request):
             send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
-        #Follow up SA
+        #Follow up GBV
         elif text == '3*5':
             identifier=random.randint(160,190)
-            services=Service.objects.filter(SERVICE_CATEGORY="SA", is_available=True)
+            services=Service.objects.filter(SERVICE_CATEGORY="GBV", is_available=True)
             services=[service for service in services]
             service=random.choices(services)
             for i in service:
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
-                SERVICECATEGORY="SA",
+                SERVICECATEGORY="GBV",
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
@@ -248,17 +248,17 @@ def index(request):
             send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
-        #Follow up DA
+        #Follow up CR
         elif text == '3*6':
             identifier=random.randint(200,230)
-            services=Service.objects.filter(SERVICE_CATEGORY="DA", is_available=True)
+            services=Service.objects.filter(SERVICE_CATEGORY="CR", is_available=True)
             services=[service for service in services]
             service=random.choices(services)
             for i in service:
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
-                SERVICECATEGORY="DA",
+                SERVICECATEGORY="CR",
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
@@ -267,17 +267,17 @@ def index(request):
             send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
-        #Follow up SUA
+        #Follow up SUD
         elif text == '3*7':
             identifier=random.randint(240,270)
-            services=Service.objects.filter(SERVICE_CATEGORY="SUA", is_available=True)
+            services=Service.objects.filter(SERVICE_CATEGORY="SUD", is_available=True)
             services=[service for service in services]
             service=random.choices(services)
             for i in service:
                 service=i
             departure=datetime.now() + timedelta(hours=1)
             new_reporting=Reporting.objects.create(
-                SERVICECATEGORY="SUA",
+                SERVICECATEGORY="SUD",
                 service=service,
                 customer=phone_number,
                 identifier=identifier,
