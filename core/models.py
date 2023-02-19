@@ -16,7 +16,7 @@ class Service(models.Model):
     start=models.CharField(max_length=250)
     finish=models.CharField(max_length=250)
     #price = models.FloatField()
-    identifiers=models.IntegerField() #equivalent to seat number in a bus
+    identifiers=models.IntegerField() #Shows option number in the USSD menu
     is_available=models.BooleanField(default=True)
 
     
