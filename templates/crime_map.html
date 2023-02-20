@@ -5,8 +5,7 @@
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     </head>
     {% block content %}
-        <div id="mapid" style="height: 500px;"></div>
-        
+        <div id="mapid" style="height: 80vh; width: 100vw;"></div>
         <script>
             var mymap = L.map('mapid').setView([-0.401, 36.423], 7.10);
           
@@ -33,6 +32,11 @@
             //});
 
           
-        </script>      
+        </script> 
+        <script>
+            setInterval(function(){
+                location.reload();
+            }, 60000);
+        </script>             
     {% endblock %}
 </html>
