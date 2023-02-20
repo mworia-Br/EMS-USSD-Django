@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.contrib.gis.geos import Point
 from .models import Crime
 
 def crime_map(request):
@@ -13,7 +12,8 @@ def crime_map(request):
             'time': crime.time,
             'location': crime.location,
             'description': crime.description,
-            'coordinates': crime.coordinates.coords
+            'longitude': crime.longitude,
+            'latitude': crime.latitude,
         })
 
     return render(request, 'crime_map.html', {'crime_data': crime_data})
