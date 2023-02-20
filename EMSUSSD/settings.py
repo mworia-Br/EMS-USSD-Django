@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whitenoise.runserver_nostatic',
     'core',
+    'crimemap'
     'rest_framework',
     'corsheaders',
 ]
