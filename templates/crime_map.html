@@ -26,7 +26,7 @@
             //    .bindPopup("<b>{{ crime.location }}</b><br>{{ crime.description }}<br>{{ crime.date }} {{ crime.time }}");
             //{% endfor %}
             crime_data.forEach(function(crime) {
-              L.marker([crime.coordinates[1], crime.coordinates[0]]).addTo(mymap)
+              L.marker([crime.latitude, crime.longitude]).addTo(mymap)
                 .bindPopup("<b>" + crime.location + "</b><br>" + crime.description + "<br>" + crime.date + " " + crime.time);
             });
 
