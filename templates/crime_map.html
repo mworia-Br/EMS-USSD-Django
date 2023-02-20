@@ -21,14 +21,16 @@
                 accessToken: 'pk.eyJ1IjoiYnJheWtlIiwiYSI6ImNrZHl5NnZyNDNnbzYyenBhbmQwNmJseGkifQ.sVGNBk8KpQ8Exx6ixyvAJQ'
             }).addTo(mymap);
           
-            //{% for crime in crime_data %}
-            //  L.marker([{{ crime.coordinates.1 }}, {{ crime.coordinates.0 }}]).addTo(mymap)
-            //    .bindPopup("<b>{{ crime.location }}</b><br>{{ crime.description }}<br>{{ crime.date }} {{ crime.time }}");
-            //{% endfor %}
-            crime_data.forEach(function(crime) {
-              L.marker([crime.latitude, crime.longitude]).addTo(mymap)
-                .bindPopup("<b>" + crime.location + "</b><br>" + crime.description + "<br>" + crime.date + " " + crime.time);
-            });
+            {% for crime in crime_data %}
+              L.marker([{{ crime.latitude }}, {{ crime.longitude }}]).addTo(mymap)
+                .bindPopup("<b>{{ crime.location }}</b><br>{{ crime.description }}<br>{{ crime.date }} {{ crime.time }}");
+            {% endfor %}
+            //console.log(crime_data);
+
+            //crime_data.forEach(function(crime) {
+            //  L.marker([crime.latitude, crime.longitude]).addTo(mymap)
+            //    .bindPopup("<b>" + crime.location + "</b><br>" + crime.description + "<br>" + crime.date + " " + crime.time);
+            //});
 
           
         </script>      
