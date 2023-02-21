@@ -42,7 +42,7 @@ def index(request):
         def emergency_location():
             # Prompt the user to input their location
             response = "CON iSema\n"
-            response += "Please enter your current location:\n (e.g. Kimbo, Ruiru)\n"
+            response += "Please enter your current location:\n (e.g. Toll, Ruiru)\n"
             # Store the reporting details (including location) in a database or file
             print(text)
             location = text
@@ -152,7 +152,7 @@ def index(request):
         #Follow up RA
         elif text == '3*1':
             response = "CON iSema\n"
-            response += "Please enter your current location:\n (e.g. Kimbo, Ruiru)\n"
+            response += "Please enter your current location:\n (e.g. Toll, Ruiru)\n"
             
 
         elif text[:4] == "3*1*":
@@ -173,7 +173,7 @@ def index(request):
             
             # Store the reporting details (including location) in a database or file
             print(text)
-            location = text[5:]
+            location = text[4:]
             new_userlocation = userLocation.objects.create(
                 phone_number=phone_number,
                 location=location
@@ -184,6 +184,10 @@ def index(request):
 
         #Follow up FI
         elif text == '3*2':
+            response = "CON iSema\n"
+            response += "Please enter your current location:\n (e.g. Toll, Ruiru)\n"
+
+        elif text[:4] == "3*2*":
             identifier=random.randint(40,70)
             services=Service.objects.filter(SERVICE_CATEGORY="FI", is_available=True)
             services=[service for service in services]
@@ -198,11 +202,21 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
+            print(text)
+            location = text[4:]
+            new_userlocation = userLocation.objects.create(
+                phone_number=phone_number,
+                location=location
+            )
             send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up RC
         elif text == '3*3':
+            response = "CON iSema\n"
+            response += "Please enter your current location:\n (e.g. Toll, Ruiru)\n"
+
+        elif text[:4] == "3*3*":
             identifier=random.randint(80,110)
             services=Service.objects.filter(SERVICE_CATEGORY="RC", is_available=True)
             services=[service for service in services]
@@ -217,11 +231,21 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
+            print(text)
+            location = text[4:]
+            new_userlocation = userLocation.objects.create(
+                phone_number=phone_number,
+                location=location
+            )
             send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up ME
         elif text == '3*4':
+            response = "CON iSema\n"
+            response += "Please enter your current location:\n (e.g. Toll, Ruiru)\n"
+
+        elif text[:4] == "3*4*":
             identifier=random.randint(120,150)
             services=Service.objects.filter(SERVICE_CATEGORY="ME", is_available=True)
             services=[service for service in services]
@@ -236,11 +260,21 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
+            print(text)
+            location = text[4:]
+            new_userlocation = userLocation.objects.create(
+                phone_number=phone_number,
+                location=location
+            )
             send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up GBV
         elif text == '3*5':
+            response = "CON iSema\n"
+            response += "Please enter your current location:\n (e.g. Toll, Ruiru)\n"
+
+        elif text[:4] == "3*5*":
             identifier=random.randint(160,190)
             services=Service.objects.filter(SERVICE_CATEGORY="GBV", is_available=True)
             services=[service for service in services]
@@ -255,11 +289,21 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
+            print(text)
+            location = text[4:]
+            new_userlocation = userLocation.objects.create(
+                phone_number=phone_number,
+                location=location
+            )
             send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up CR
         elif text == '3*6':
+            response = "CON iSema\n"
+            response += "Please enter your current location:\n (e.g. Toll, Ruiru)\n"
+
+        elif text[:4] == "3*6*":
             identifier=random.randint(200,230)
             services=Service.objects.filter(SERVICE_CATEGORY="CR", is_available=True)
             services=[service for service in services]
@@ -274,11 +318,21 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
+            print(text)
+            location = text[4:]
+            new_userlocation = userLocation.objects.create(
+                phone_number=phone_number,
+                location=location
+            )
             send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
         #Follow up SUD
         elif text == '3*7':
+            response = "CON iSema\n"
+            response += "Please enter your current location:\n (e.g. Toll, Ruiru)\n"
+
+        elif text[:4] == "3*7*":
             identifier=random.randint(240,270)
             services=Service.objects.filter(SERVICE_CATEGORY="SUD", is_available=True)
             services=[service for service in services]
@@ -293,6 +347,12 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
+            print(text)
+            location = text[4:]
+            new_userlocation = userLocation.objects.create(
+                phone_number=phone_number,
+                location=location
+            )
             send_messages()
             response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
 
