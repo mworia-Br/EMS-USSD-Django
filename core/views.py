@@ -151,6 +151,11 @@ def index(request):
 
         #Follow up RA
         elif text == '3*1':
+            response = "CON iSema\n"
+            response += "Please enter your current location:\n (e.g. Kimbo, Ruiru)\n"
+            
+
+        elif text[:5] == "3*1*":
             identifier=random.randint(1,30)
             services=Service.objects.filter(SERVICE_CATEGORY="RA", is_available=True)
             services=[service for service in services]
@@ -165,18 +170,16 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            response = "CON iSema\n"
-            response += "Please enter your current location:\n (e.g. Kimbo, Ruiru)\n"
+            
             # Store the reporting details (including location) in a database or file
             print(text)
-            location = text
+            location = text[5:]
             new_userlocation = userLocation.objects.create(
                 phone_number=phone_number,
                 location=location
             )
             send_messages()
-
-            response = f"END  Successful! Info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
+            
 
         #Follow up FI
         elif text == '3*2':
