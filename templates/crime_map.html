@@ -5,9 +5,9 @@
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
     </head>
     {% block content %}
-        <div id="mapid" style="height: 80vh; width: 100vw;"></div>
+        <div id="mapid" style="height: 100vh; width: 100vw;"></div>
         <script>
-            var mymap = L.map('mapid').setView([-0.401, 36.423], 7.10);
+            var mymap = L.map('mapid').setView([-0.401, 36.423], 8.10);
           
             L.tileLayer('https://api.mapbox.com/styles/v1/brayke/clecozpwj001u01oq1ast6x01/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYnJheWtlIiwiYSI6ImNrZHl5NnZyNDNnbzYyenBhbmQwNmJseGkifQ.sVGNBk8KpQ8Exx6ixyvAJQ', {
                 attribution: 'iSema | Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
@@ -32,11 +32,6 @@
             //});
 
           
-        </script> 
-        <script>
-            setInterval(function(){
-                location.reload();
-            }, 60000);
         </script>             
     {% endblock %}
 </html>
