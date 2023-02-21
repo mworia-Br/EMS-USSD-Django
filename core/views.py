@@ -42,7 +42,7 @@ def index(request):
         def emergency_location():
             # Prompt the user to input their location
             response = "CON iSema\n"
-            response += input("Please enter your current location:\n (e.g. Kimbo, Ruiru)\n")
+            response += "Please enter your current location:\n (e.g. Kimbo, Ruiru)\n"
             # Store the reporting details (including location) in a database or file
             print(text)
             location = text
