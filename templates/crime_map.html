@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+        <meta http-equiv="refresh" content="120" />
     </head>
     {% block content %}
         <div id="mapid" style="height: 100vh; width: 100vw;"></div>
@@ -23,7 +24,11 @@
             {% for crime in crime_data %}
               L.marker([{{ crime.latitude }}, {{ crime.longitude }}]).addTo(mymap)
                 .bindPopup("<b>{{ crime.location }}</b><br>{{ crime.description }}<br>{{ crime.date }} {{ crime.time }}");
+<<<<<<< HEAD
             {% endfor %}
+=======
+            {% endfor %}     
+>>>>>>> d57734b0983432304e7ef8e5f7c7c308fa5497e9
         </script>             
     {% endblock %}
 </html>
