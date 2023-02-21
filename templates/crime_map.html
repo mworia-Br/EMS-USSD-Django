@@ -24,11 +24,7 @@
             {% for crime in crime_data %}
               L.marker([{{ crime.latitude }}, {{ crime.longitude }}]).addTo(mymap)
                 .bindPopup("<b>{{ crime.location }}</b><br>{{ crime.description }}<br>{{ crime.date }} {{ crime.time }}");
-<<<<<<< HEAD
             {% endfor %}
-=======
-            {% endfor %}     
->>>>>>> d57734b0983432304e7ef8e5f7c7c308fa5497e9
         </script>             
     {% endblock %}
 </html>
