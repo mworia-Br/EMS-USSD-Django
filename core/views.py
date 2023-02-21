@@ -179,6 +179,7 @@ def index(request):
                 location=location
             )
             send_messages()
+            response = f"END  Successful! Report info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
             
 
         #Follow up FI
