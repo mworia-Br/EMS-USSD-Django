@@ -4,7 +4,7 @@ import os
 import random
 import africastalking
 from datetime import datetime, timedelta
-from core.models import Reporting, Service, Responder
+from core.models import Reporting, Service, Responder, userLocation
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from dotenv import load_dotenv
@@ -19,22 +19,7 @@ api_key = os.getenv("SANDBOX_API_KEY")
 africastalking.initialize(username, api_key)
 
 sms = africastalking.SMS
-'''
-def send_messages():
-            print('send messages')
-            alert=f'Hello, your request has been received. We are on standby to assist you, our response team will contact you for additional information.'
-            responsed =sms.send(alert, [phone_number]) 
-            print(responsed)
 
-def send_messages():
-    print('send messages')
-    to=['+254791573545', '+254722000000']
-    
-    message='Hello, your request has been received. We are on standby to assist you, our response team will contact you for additional information.'
-
-    response =sms.send(message, to) 
-    print(response)
-'''
 # Create your views here.
 @csrf_exempt
 def index(request):
@@ -53,6 +38,18 @@ def index(request):
             recipients=[str(phone_number), '+254791573545']
             responsed =sms.send(message, recipients)
             print(responsed)
+
+        def emergency_location():
+            # Prompt the user to input their location
+            response = "CON iSema\n"
+            response += input("Please enter your current location:\n (e.g. Kimbo, Ruiru)\n")
+            # Store the reporting details (including location) in a database or file
+            print(text)
+            location = text
+            new_userlocation = userLocation.objects.create(
+                phone_number=phone_number,
+                location=location
+            )
             
         if text == "":
             response = "CON iSema\n Welcome! \n Which service would you like to access? \n"  
@@ -168,6 +165,7 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
+            emergency_location()
             send_messages()
 
             response = f"END  Successful! Info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
