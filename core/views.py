@@ -165,7 +165,15 @@ def index(request):
                 identifier=identifier,
                 departure=departure
                 )
-            emergency_location()
+            response = "CON iSema\n"
+            response += "Please enter your current location:\n (e.g. Kimbo, Ruiru)\n"
+            # Store the reporting details (including location) in a database or file
+            print(text)
+            location = text
+            new_userlocation = userLocation.objects.create(
+                phone_number=phone_number,
+                location=location
+            )
             send_messages()
 
             response = f"END  Successful! Info: \n TICKET ID 678{new_reporting.id} \n Service {service} \n Your case number is 8976{identifier} \n Closses at {departure:%H:%M:%S}"
