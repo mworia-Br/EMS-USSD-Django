@@ -155,7 +155,7 @@ def index(request):
             response += "Please enter your current location:\n (e.g. Kimbo, Ruiru)\n"
             
 
-        elif text[:5] == "3*1*":
+        elif text[:4] == "3*1*":
             identifier=random.randint(1,30)
             services=Service.objects.filter(SERVICE_CATEGORY="RA", is_available=True)
             services=[service for service in services]
