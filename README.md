@@ -9,3 +9,6 @@ python manage.py startapp core
 #AT_SANDBOX
 
 USSD:   384*55250#
+Live Crime map:
+https://isema.azurewebsites.net/maps/crime_map
+
