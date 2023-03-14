@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    </head>
+    <body>
+    {% block content %}
+        <div id="mapid" style="height: 500px;"></div>
+        
+        <script>
+            var mymap = L.map('mapid').setView([-0.401, 36.423], 7.10);
+          
+            L.tileLayer('https://api.mapbox.com/styles/v1/brayke/clecozpwj001u01oq1ast6x01/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYnJheWtlIiwiYSI6ImNrZHl5NnZyNDNnbzYyenBhbmQwNmJseGkifQ.sVGNBk8KpQ8Exx6ixyvAJQ', {
+                attribution: 'iSema powered by:Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                    '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                    'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+                id: 'mapbox/streets-v11',
+                tileSize: 512,
+                zoomOffset: -1,
+                accessToken: 'pk.eyJ1IjoiYnJheWtlIiwiYSI6ImNrZHl5NnZyNDNnbzYyenBhbmQwNmJseGkifQ.sVGNBk8KpQ8Exx6ixyvAJQ'
+            }).addTo(mymap);
+          
+            //{% for crime in crime_data %}
+            //  L.marker([{{ crime.coordinates.1 }}, {{ crime.coordinates.0 }}]).addTo(mymap)
+            //    .bindPopup("<b>{{ crime.location }}</b><br>{{ crime.description }}<br>{{ crime.date }} {{ crime.time }}");
+            //{% endfor %}
+          
+        </script>
+    </body>
+</html>

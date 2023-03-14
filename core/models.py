@@ -42,6 +42,14 @@ class Reporting(models.Model):
     def __str__(self):
         return self.SERVICECATEGORY + " " + self.customer+ " " + self.status
 
+class userLocation(models.Model):
+    phone_number = models.CharField(max_length=150)
+    location = models.CharField(max_length=150)
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.phone_number + " " + self.location
+
 class Responder(models.Model):
     res_category=[
         ("Hospital","Hospital"),
@@ -63,3 +71,4 @@ from django.contrib import admin
 admin.site.register(Service)
 admin.site.register(Reporting)
 admin.site.register(Responder)
+admin.site.register(userLocation)
